@@ -147,7 +147,7 @@ const radioPlay = (channel?: string) => {
 		error("ERR: Still loading");
 };
 
-const radioStop = () => {
+export const radioStop = () => {
 	if (playerReady && radioPlayer) {
 		radioPlayer.pause();
 		radioPlayer.src = '';
@@ -425,7 +425,7 @@ const setTempTitle = (title) => {
 
 // Sovietwave-specific code but may be used anywhere
 const requestListenersCount = () => {
-	setTimeout(requestListenersCount, 20000);
+	setTimeout(requestListenersCount, 10000);
 
 	$.ajax({
 		url: "https://station.waveradio.org/status-json.xsl",
